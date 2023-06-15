@@ -23,14 +23,14 @@ public class PlayerDimensionPlaceholder implements DedicatedServerModInitializer
 	private void registerPlaceholders() {
 		Placeholders.register(new Identifier("player", "dimension"), (ctx, arg) -> {
 			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(format(ctx.player().getWorld().getDimensionKey().getValue().getPath()));
+				return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getPath()));
 			} else {
 				return PlaceholderResult.invalid("No player!");
 			}
 		});
 		Placeholders.register(new Identifier("player", "dimension_mod"), (ctx, arg) -> {
 			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(format(ctx.player().getWorld().getDimensionKey().getValue().getNamespace()));
+				return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace()));
 			} else {
 				return PlaceholderResult.invalid("No player!");
 			}
@@ -38,14 +38,14 @@ public class PlayerDimensionPlaceholder implements DedicatedServerModInitializer
 
 		Placeholders.register(new Identifier("player", "dimension_raw"), (ctx, arg) -> {
 			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(ctx.player().getWorld().getDimensionKey().getValue().getPath());
+				return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getPath());
 			} else {
 				return PlaceholderResult.invalid("No player!");
 			}
 		});
 		Placeholders.register(new Identifier("player", "dimension_mod_raw"), (ctx, arg) -> {
 			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(ctx.player().getWorld().getDimensionKey().getValue().getNamespace());
+				return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace());
 			} else {
 				return PlaceholderResult.invalid("No player!");
 			}
