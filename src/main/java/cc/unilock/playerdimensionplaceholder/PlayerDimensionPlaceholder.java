@@ -22,33 +22,47 @@ public class PlayerDimensionPlaceholder implements DedicatedServerModInitializer
 
 	private void registerPlaceholders() {
 		Placeholders.register(new Identifier("player", "dimension"), (ctx, arg) -> {
-			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getPath()));
-			} else {
+			if (!ctx.hasPlayer()) {
 				return PlaceholderResult.invalid("No player!");
 			}
+			if (!ctx.hasWorld()) {
+				return PlaceholderResult.invalid("No world!");
+			}
+
+			return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getPath()));
 		});
+
 		Placeholders.register(new Identifier("player", "dimension_mod"), (ctx, arg) -> {
-			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace()));
-			} else {
+			if (!ctx.hasPlayer()) {
 				return PlaceholderResult.invalid("No player!");
 			}
+			if (!ctx.hasWorld()) {
+				return PlaceholderResult.invalid("No world!");
+			}
+
+			return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace()));
 		});
 
 		Placeholders.register(new Identifier("player", "dimension_raw"), (ctx, arg) -> {
-			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getPath());
-			} else {
+			if (!ctx.hasPlayer()) {
 				return PlaceholderResult.invalid("No player!");
 			}
+			if (!ctx.hasWorld()) {
+				return PlaceholderResult.invalid("No world!");
+			}
+
+			return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getPath());
 		});
+
 		Placeholders.register(new Identifier("player", "dimension_mod_raw"), (ctx, arg) -> {
-			if (ctx.hasPlayer()) {
-				return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace());
-			} else {
+			if (!ctx.hasPlayer()) {
 				return PlaceholderResult.invalid("No player!");
 			}
+			if (!ctx.hasWorld()) {
+				return PlaceholderResult.invalid("No world!");
+			}
+
+			return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace());
 		});
 	}
 
