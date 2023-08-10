@@ -2,16 +2,16 @@ package cc.unilock.playerdimensionplaceholder;
 
 import eu.pb4.placeholders.api.PlaceholderResult;
 import eu.pb4.placeholders.api.Placeholders;
-import net.fabricmc.api.DedicatedServerModInitializer;
+import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class PlayerDimensionPlaceholder implements DedicatedServerModInitializer {
+public class PlayerDimensionPlaceholder implements ModInitializer {
 	//public static final Logger LOGGER = LoggerFactory.getLogger("PlayerDimensionPlaceholder");
 
 	@Override
-	public void onInitializeServer() {
+	public void onInitialize() {
 		ServerLifecycleEvents.SERVER_STARTED.register((server) -> registerPlaceholders());
 	}
 

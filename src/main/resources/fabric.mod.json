@@ -13,11 +13,10 @@
   },
 
   "license": "MIT",
-  "icon": "assets/playerdimensionplaceholder/icon.png",
 
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
-    "server": [
+    "main": [
       "cc.unilock.playerdimensionplaceholder.PlayerDimensionPlaceholder"
     ]
   },
