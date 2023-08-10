@@ -27,3 +27,7 @@ etc.
 
 Planned features:
 - Configurable colors for dimensions (green for overworld, red for the_nether, purple for the_end, ...)
+
+***
+
+*Original inspiration + most of the "makeTitleCase" code: https://github.com/Ewan-Selkirk/Dimension-Viewer*
