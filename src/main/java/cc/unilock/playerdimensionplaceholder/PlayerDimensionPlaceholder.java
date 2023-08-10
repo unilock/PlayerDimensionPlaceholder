@@ -29,7 +29,7 @@ public class PlayerDimensionPlaceholder implements ModInitializer {
 				return PlaceholderResult.invalid("No world!");
 			}
 
-			return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getPath()));
+			return PlaceholderResult.value(format(ctx.player().getWorld().getDimensionKey().getValue().getPath()));
 		});
 
 		Placeholders.register(new Identifier("player", "dimension_mod"), (ctx, arg) -> {
@@ -40,7 +40,7 @@ public class PlayerDimensionPlaceholder implements ModInitializer {
 				return PlaceholderResult.invalid("No world!");
 			}
 
-			return PlaceholderResult.value(format(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace()));
+			return PlaceholderResult.value(format(ctx.player().getWorld().getDimensionKey().getValue().getNamespace()));
 		});
 
 		Placeholders.register(new Identifier("player", "dimension_raw"), (ctx, arg) -> {
@@ -51,7 +51,7 @@ public class PlayerDimensionPlaceholder implements ModInitializer {
 				return PlaceholderResult.invalid("No world!");
 			}
 
-			return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getPath());
+			return PlaceholderResult.value(ctx.player().getWorld().getDimensionKey().getValue().getPath());
 		});
 
 		Placeholders.register(new Identifier("player", "dimension_mod_raw"), (ctx, arg) -> {
@@ -62,7 +62,7 @@ public class PlayerDimensionPlaceholder implements ModInitializer {
 				return PlaceholderResult.invalid("No world!");
 			}
 
-			return PlaceholderResult.value(ctx.player().getServerWorld().getDimensionKey().getValue().getNamespace());
+			return PlaceholderResult.value(ctx.player().getWorld().getDimensionKey().getValue().getNamespace());
 		});
 	}
 
