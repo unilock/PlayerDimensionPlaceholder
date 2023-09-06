@@ -1,5 +1,7 @@
 # %player:dimension% Placeholder
 
+### This mod will no longer be updated because I just noticed [TextPlaceholderAPI already does this](https://github.com/Patbox/TextPlaceholderAPI/blob/1.20/src/main/java/eu/pb4/placeholders/impl/placeholder/builtin/WorldPlaceholders.java#L72). :(
+
 Adds placeholders that return the (mod that adds the) dimension a player is in.  
 To be used with mods that implement [Placeholders API](https://placeholders.pb4.eu).
 
